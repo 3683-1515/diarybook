@@ -1,0 +1,38 @@
+USE_MSVCRT=1
+
+TARGETNAME=PLNMGR2
+TARGETPATH=obj
+TARGETTYPE=PROGRAM
+
+INCLUDES=.;..\fbird
+
+SOURCES= plnmgr2.c		\
+         plnmgr2.rc		\
+		 diarymgr.c		\
+		 planmgr.c		\
+		 timermgr.c		\
+		 frfileio.c
+
+C_DEFINES=-DWIN32 -DWINVER_3 -D_UNICODE -DUNICODE
+
+MSC_WARNING_LEVEL=/W3
+
+UMTYPE=windows
+UMENTRY=winmain
+TARGETLIBS=\
+          $(SDK_LIB_PATH)\ntdll.lib       \
+          $(SDK_LIB_PATH)\gdi32.lib       \
+          $(SDK_LIB_PATH)\shell32.lib     \
+          ..\fbird\$(O)\fbird.lib         \
+          $(SDK_LIB_PATH)\Comctl32.lib 
+
+LINKER_STACKCOMMITSIZE=0x4000
+
+SXS_ASSEMBLY_NAME=Microsoft.Windows.PlanManager2
+SXS_ASSEMBLY_VERSION=3.22
+SXS_ASSEMBLY_LANGUAGE_INDEPENDENT=1
+SXS_MANIFEST=plnmgr2.manifest
+SXS_MANIFEST_IN_RESOURCES=0
+
+
+

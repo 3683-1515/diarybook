@@ -1,0 +1,11 @@
+LIBRARY FBIRD
+
+EXPORTS
+    dayCount
+	addDays
+	copyDate
+	writePageIndicator
+	pageIndicator
+	invalidate
+	isLeapYear
+	checkTabs
